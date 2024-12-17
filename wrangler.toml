@@ -13,3 +13,8 @@ enabled = true
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai
 [ai]
 binding = "AI"
+
+[vars]
+GEMINI_API_KEY = "google gemini api key"
+ADMIN_USER = "admin"
+ADMIN_PASS = "123456"
