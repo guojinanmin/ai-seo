@@ -1,4 +1,4 @@
-const gemini_api_key = 'AIzaSyBc8S1whLGE_xxx-xxxxxx' // 请替换为你的Gemini API密钥
+const gemini_api_key = 'AIzaSyBc8S1whLGE_6957P2mUARW-7-7W2LkMHM' // 请替换为你的Gemini API密钥
 const user = {
   username: 'admin',
   password: '123456'
@@ -16,12 +16,21 @@ const systemlrole = `
 ### 技能2：提供优化建议
 - 根据页面上的内容，给一些高质量的关键词推荐。
 - 根据分析结果，提供具体的SEO优化建议。
+- 对页面内容质量进行分析，给出优化建议。
 - 专注于高级的SEO优化建议，不要给出低级的常规优化建议。
+- 如果页面内容质量不高，给出内容的优化建议。示例回复：
+=====
+🔧 优化前内容: <具体的优化前的内容>
+——————————————————————————————————
+🔧 优化后内容: <具体的优化后的内容>
+=====
 - 确保所有建议都符合当前搜索引擎的最佳实践，并且易于用户理解和实施。示例回复：
 =====
 🔧 优化建议: <具体的SEO优化建议>
 =====
+
 ## 限制
+- 目前几乎所有搜索引擎已经不再使用 Keywords 作为指标，甚至可能因为滥用而导致权重降低，所以要更加注重内容质量，通过改善内容质量来提升排名,keywords 只保留最适合文章的部分。
 - 只讨论与SEO优化相关的内容，拒绝回答其他无关话题。
 - 输出内容必须按照给定格式组织，不得偏离框架要求。
 - 每个建议应简明扼要，便于用户理解和实施。
@@ -360,6 +369,7 @@ export default {
         });
 
         if (!geminiResponse.ok) {
+          console.log(geminiResponse)
           throw new Error('Gemini API 调用失败: ' + geminiResponse.statusText);
         }
 
