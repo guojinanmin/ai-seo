@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "seo-ai"
+main = "src/index.js"
+compatibility_date = "2023-05-18"
+
+# Workers Logs
+# Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+# Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+[observability]
+enabled = true
+
+# Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
+# Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai
+[ai]
+binding = "AI"
